@@ -1,0 +1,589 @@
+/* Import Premium Web Fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&display=swap');
+
+/* Global Settings & Modern Font Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body { 
+    font-family: 'Times New Roman', Times, serif; 
+    background-color: #1f58de34; /* Smooth Blue-White base background */
+    color: #010d29; /* Dark Navy for crisp contrast readability */
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+}
+
+/* Beautiful Hero Banner Section */
+.hero-section {
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    height: 75vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay {
+    background: rgba(2, 31, 63, 0.73); /* Slightly deepened for better text legibility */
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.hero-subtitle {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 13px;
+    letter-spacing: 5px; /* Elegant formal spacing */
+    text-transform: uppercase;
+    color: #fef7efe6; 
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif; /* Formal Serif Display */
+    font-size: 3.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.hero-tagline {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.25rem;
+    max-width: 650px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #f5f6f7;
+}
+
+.cta-btn {
+    font-family:'Times New Roman', Times, serif;
+    background: #ffffff; 
+    color: #021738;
+    padding: 14px 38px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.cta-btn:hover {
+    background: #064185; 
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(6, 65, 133, 0.4);
+}
+
+/* Brand Backstory Section Styling */
+.story-section {
+    background-color: #ffffff; 
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: 1px solid #e1e8ed;
+}
+
+.story-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.story-container h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    color: #011638; 
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.story-container p {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 1.05rem;
+    color: #031632;
+    font-weight: 400;
+    line-height: 1.9;
+    text-align: center; /* Centered layout yields a more curated formal vibe */
+}
+
+
+/* The outer presentation frame remains deep navy and spacious */
+.editorial-slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 520px; /* Provides ample breathing space for structural layouts */
+    overflow: hidden;
+    background-color: #011638; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.editorial-slide-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.editorial-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
+    transition: opacity 1.3s ease-in-out, visibility 1.3s ease-in-out;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.editorial-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 4;
+}
+
+/* --- THE UNIFORM INNER SLIDE CONTROLLER --- */
+.slide-image-box {
+    width: 90%;
+    max-width: 500px;      /* Restricts width so flyers look clean, not wider than tall */
+    height: 450px;         /* Forces all images into an identical layout height block */
+    border-radius: 12px;   /* Sophisticated premium rounded framework */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); /* Strong drop shadow to make graphics pop */
+    
+    /* Matches base card fields seamlessly to prevent unaligned color gaps */
+    background-color: #011638; 
+    
+    /* CRUCIAL: Ensures full readability of your flyers without cropping any text out */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Ambient presentation frame shading */
+.editorial-tint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(1,22,56,0.1) 0%, rgba(1,22,56,0.7) 100__);
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Content Layout Grid */
+.products-container { 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px; 
+}
+
+.category-title { 
+    font-family: 'Playfair Display', serif;
+    color: #031632; 
+    font-size: 2.5rem; 
+    margin: 60px 0 8px 0;
+    text-align: left;
+    font-weight: 700;
+}
+
+.category-subtitle {
+    font-family: 'Times New Roman', Times, serif;
+    color: #010b1a;
+    font-size: 1rem;
+    margin-bottom: 35px;
+    text-align: left;
+    font-weight: 400;
+}
+
+.sub-price {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    color: #031632; 
+    font-weight: 500;
+    margin-left: 10px;
+    letter-spacing: 0px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+/* Premium Card Design */
+.card { 
+    background: #ffffff; 
+    border-radius: 12px; /* Marginally sharper corners offer a more formal tone */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(1, 13, 41, 0.05); 
+    border: 1px solid #e2e8f0;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(1, 13, 41, 0.12);
+    border-color: #cbd5e1;
+}
+
+.card-img-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background-color: #f1f5f9;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.card:hover .product-img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card h3 { 
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    color: #021934; 
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.card .meta {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.9rem;
+    color: #53647c;
+    margin-bottom: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.card .price { 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.4rem; 
+    font-weight: 700; 
+    color: #021934; 
+    margin-bottom: 25px;
+    margin-top: auto;
+}
+
+/* Modern WhatsApp Button with Icon */
+.whatsapp-btn { 
+    font-family: 'Times New Roman', Times, serif;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    background: #046929; 
+    color: white; 
+    padding: 14px; 
+    border-radius: 8px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.whatsapp-btn:hover { 
+    background: #035220; 
+}
+
+.whatsapp-btn:active {
+    transform: scale(0.98);
+}
+
+.wa-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+
+/* Footer Style */
+footer { 
+    font-family: 'Times New Roman', Times, serif;
+    background: #0a193d; 
+    color: #e2e8f0;
+    padding: 70px 20px 40px 20px; 
+    text-align: center;
+    font-size: 14px; 
+    margin-top: 100px;
+}
+
+.footer-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto 40px auto;
+    text-align: left;
+    gap: 40px;
+}
+
+.info-block {
+    flex: 1;
+    min-width: 250px;
+}
+
+.info-block h4 {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff; 
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.info-block p {
+    font-weight: 300;
+    margin-bottom: 10px;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.info-block strong {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.12);
+    margin: 30px auto;
+    max-width: 1160px;
+}
+
+.copyright {
+    color: #cbd5e1;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Scaling adjusts for smaller viewports */
+@media (max-width: 768px) {
+    .hero-title { font-size: 2.6rem; }
+    .hero-tagline { font-size: 1.1rem; }
+    .category-title { font-size: 2rem; }
+    .story-container h2 { font-size: 2rem; }
+    .footer-info { flex-direction: column; text-align: center; }
+}
+
+/* Floating Cart Trigger Widget */
+#cart-floating-icon {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #064185;
+    color: white;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 25px rgba(1, 13, 41, 0.25);
+    cursor: pointer;
+    z-index: 999;
+    transition: transform 0.2s ease;
+}
+#cart-floating-icon:hover { transform: scale(1.08); }
+.cart-icon-bag { font-size: 24px; }
+#cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #046929;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 20px;
+}
+
+/* Slide-out Cart Panel Container */
+#cart-drawer {
+    position: fixed;
+    top: 0; right: -400px;
+    width: 380px; height: 100%;
+    background: #ffffff;
+    box-shadow: -10px 0 30px rgba(1, 13, 41, 0.15);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+#cart-drawer.open { right: 0; }
+
+.cart-header {
+    padding: 25px;
+    background: #064185;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart-header h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; }
+.close-cart-btn { background: none; border: none; color: white; font-size: 20px; cursor: pointer; }
+
+#cart-items-container { padding: 20px; flex-grow: 1; overflow-y: auto; }
+.empty-cart-text { text-align: center; color: #53647c; margin-top: 50px; font-style: italic; }
+
+/* Item Layout UI Components inside Drawer */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+.cart-item-info h4 { font-size: 1.05rem; color: #010d29; margin-bottom: 4px; }
+.cart-item-info p { font-size: 0.95rem; color: #53647c; }
+.cart-item-actions { display: flex; align-items: center; gap: 10px; }
+.quantity-btn { background: #f1f5f9; border: none; width: 28px; height: 28px; border-radius: 4px; font-weight: bold; cursor: pointer; }
+.quantity-btn:hover { background: #cbd5e1; }
+
+.cart-footer { padding: 25px; border-top: 1px solid #e2e8f0; background: #f8fafc; }
+.cart-total-row { display: flex; justify-content: space-between; font-weight: 700; font-size: 1.2rem; color: #010d29; margin-bottom: 20px; }
+
+#checkout-whatsapp-btn {
+    width: 100%; background: #046929; color: white; border: none; padding: 15px;
+    border-radius: 8px; font-family: 'Montserrat', sans-serif; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; transition: background 0.3s ease;
+}
+#checkout-whatsapp-btn:hover { background: #035220; }
+
+/* Refined Add To Cart Grid Action Button */
+.add-to-cart-btn {
+    font-family: 'Montserrat', sans-serif;
+    background: #011638; color: white; border: none; padding: 12px;
+    border-radius: 8px; font-weight: 600; font-size: 0.9rem; text-transform: uppercase;
+    letter-spacing: 0.5px; cursor: pointer; margin-top: auto; transition: background 0.2s ease;
+}
+.add-to-cart-btn:hover { background: #011638; }
+
+@media (max-width: 480px) {
+    #cart-drawer { width: 100%; right: -100%; }
+}
+
+/* GPS Location Button Interface */
+#location-gps-btn {
+    width: 100%;
+    background-color: #ffffff;
+    color: #064185;
+    border: 1px dashed #064185;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+#location-gps-btn:hover {
+    background-color: rgba(6, 65, 133, 0.05);
+}
+#location-status-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.85rem;
+    color: #53647c;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+/* Subtle structure layout adjustment for multiple receipt rows */
+.cart-summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    color: #53647c;
+    margin-bottom: 8px;
+}
+.cart-total-row {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed #cbd5e1;
+}
+
+/* Pre-Order Specific Badging */
+.pre-order-tag {
+    font-size: 1rem;
+    background-color: #011638;
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 50px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.card-img-container {
+    position: relative;
+}
+
+.card-img-container .badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #064185;
+    color: #ffffff;
+    padding: 5px 12px;
+    font-size: 0.75rem;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Subtle accent focus on pre-order buttons */
+.pre-order-btn {
+    background-color: #011638 !important;
+    border: 1px solid #03254c;
+}
+
+.pre-order-btn:hover {
+    background-color: #064185 !important;
+}
